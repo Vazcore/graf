@@ -50,7 +50,7 @@
 			imagedestroy($im);
 		}
 		
-		function fullGraf(){
+		function fullGraf($type){
 			$a = $this->readMatrix();
 			$connections = array();
 			$k = 0;
@@ -65,7 +65,11 @@
 					}
 				}
 			//
-			$this->grafBuilder($connections);
+			if($type == "pic"){
+				$this->grafBuilder($connections);
+			}elseif($type == "map"){
+				return $connections;
+			}
 			
 		}
 		
@@ -119,7 +123,8 @@
 			$soch = $core->generateSochetaniya(3);
 			$connections = array();
 			$count_rebro = 0;
-			$gran_info = array();
+			$graf_info = array();
+			$specific_map = array();
 
 			
 			$ps = $soch[$n];
@@ -133,6 +138,7 @@
 								$connections[] = $i."-".$j;
 								$count_rebro++;			
 								$graf_info[]= array($i,$j,$count_rebro);
+								$specific_map[] = $i."-".$j;
 							}
 						}
 					}					
@@ -141,8 +147,10 @@
 			
 			if($type == "pic"){			
 				$this->grafBuilder($connections);
-			}elseif($type == "none"){
+			}elseif($type == "none"){				
 				return $graf_info;
+			}elseif($type == "map"){
+				return $specific_map;
 			}
 		}
 

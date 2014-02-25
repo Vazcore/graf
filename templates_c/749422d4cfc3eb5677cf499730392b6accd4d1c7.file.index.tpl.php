@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-02-22 18:32:39
+<?php /* Smarty version Smarty-3.1.16, created on 2014-02-25 18:27:00
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:195425308bda42a0ea0-17242230%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1393086758,
+      1 => 1393345584,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<h3>Лабораторная работа по ДМ</h3>
 			<h4>st gr TSPIN-13p</h4>
 			<h5>Gabrusev Alexey</h5>
-			<form action="core.php" method="post">
+			<form action="core.php" method="get">
 				<label>
 					<p>Введите ФИО</p>
 					<input type="text" name="fio">

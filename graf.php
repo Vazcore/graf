@@ -7,7 +7,7 @@
 		
 		switch($graf){
 			case 1:
-				$graphics->fullGraf();
+				$graphics->fullGraf("pic");
 				break;
 				
 			case 2:

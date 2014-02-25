@@ -15,6 +15,16 @@
 			<p><a href="/graf">На Главную</a></p>
 			
 			<div id="core-place">
+				<!-- Fixed menu !-->
+				<div class="menu">					
+					<ul>
+						<h4>Навигация</h4>
+						{foreach from=$menu item=list}
+							{$list}
+						{/foreach}
+					</ul>
+				</div>
+				<!-- End Fixed menu !-->
 				<p><b>1) Кодировка ФИО:</b></p>
 				{foreach from=$fio item=numb}
 				{$numb}

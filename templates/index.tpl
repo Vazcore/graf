@@ -10,7 +10,7 @@
 			<h3>Лабораторная работа по ДМ</h3>
 			<h4>st gr TSPIN-13p</h4>
 			<h5>Gabrusev Alexey</h5>
-			<form action="core.php" method="post">
+			<form action="core.php" method="get">
 				<label>
 					<p>Введите ФИО</p>
 					<input type="text" name="fio">

@@ -23,3 +23,35 @@ form input{
 	float: left;
 	margin-left: 10px;
 }
+
+#core-place{
+	position: relative;
+}
+
+.menu{
+	position: fixed;
+	right: 0px;
+	width: 250px;	
+}
+
+
+.menu ul{
+	margin: 0;
+	padding: 0;
+	background-color: rgb(45,100,200);
+	padding-bottom: 20px;	
+}
+
+.menu ul li{
+	list-style: none;
+	padding: 10px 20px;
+	cursor: pointer;			
+}
+
+.menu ul li:hover{
+	background-color: rgb(5,140,200);
+}
+
+.menu ul li a{
+	color: white;	
+}
