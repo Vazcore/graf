@@ -19,6 +19,7 @@
 		    return $this->identicFio(strtr($string, $converter));
 		}
 		
+				
 		function identicFio($fio){
 			$fio_array = explode("-", $fio);
 			$fio_vector = array($fio_array[0]);

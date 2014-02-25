@@ -16,6 +16,7 @@
 			$this->points[] = array("100","180","6");
 			$this->points[] = array("50","120","7");
 			return $this->points;
+			
 		}
 		
 		
