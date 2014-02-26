@@ -51,7 +51,12 @@
 				case 3:
 					// Незавимимые множества
 					$razmer = $graf->razmer;
-					$independent->independentM($graf->fullGraf("map"), $razmer);					
+					$result = $independent->independentM($graf->fullGraf("map"), $razmer);
+					// Testirovanie togo, chto algoritm nahodit vershiny poryadka otlichnogo ot 2-h
+					//$map = array("1-2","1-6","2-6","2-3","3-4","4-6","5-6");					
+					//$result = $independent->independentM($map, $razmer);
+					$smarty->assign("indep_list", $result);					
+					$smarty->assign("count", $independent->chislo_nezav($result, $independent->max_el));
 					$smarty->display("independentM.tpl");
 					break;
 				

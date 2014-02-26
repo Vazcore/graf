@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<title>Lab graf - Alexey Gabrusev</title>
 		<link rel="stylesheet" type="text/css" href="templates/css/style.css">
+		<script type="text/javascript" src="templates/js/jquery.js"></script>
+		<script type="text/javascript" src="templates/js/indep.js"></script>
 	</head>
 	<body>
 		<div id="main">
@@ -33,7 +35,11 @@
 				<p>
 					<img src="graf.php?graf=1" />
 				</p>
-				
+				<h2>Список множеств:</h2>
+				{foreach from=$indep_list item=val}
+				<span class="list-indep"><b>*</b>{$val}<br></span>
+				{/foreach}
+				<h3>Число независимости - {$count}</h3>
 			</div>
 		</div>
 	</body>

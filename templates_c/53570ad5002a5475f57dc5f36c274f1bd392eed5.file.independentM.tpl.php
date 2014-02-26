@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-02-25 20:27:35
+<?php /* Smarty version Smarty-3.1.16, created on 2014-02-26 18:22:55
          compiled from ".\templates\independentM.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26277530ce04d949eb0-32384505%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '53570ad5002a5475f57dc5f36c274f1bd392eed5' => 
     array (
       0 => '.\\templates\\independentM.tpl',
-      1 => 1393352854,
+      1 => 1393431675,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'menu' => 0,
     'list' => 0,
+    'indep_list' => 0,
+    'val' => 0,
+    'count' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -30,6 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<meta charset="utf-8">
 		<title>Lab graf - Alexey Gabrusev</title>
 		<link rel="stylesheet" type="text/css" href="templates/css/style.css">
+		<script type="text/javascript" src="templates/js/jquery.js"></script>
+		<script type="text/javascript" src="templates/js/indep.js"></script>
 	</head>
 	<body>
 		<div id="main">
@@ -64,7 +69,17 @@ $_smarty_tpl->tpl_vars['list']->_loop = true;
 				<p>
 					<img src="graf.php?graf=1" />
 				</p>
-				
+				<h2>Список множеств:</h2>
+				<?php  $_smarty_tpl->tpl_vars['val'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['val']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['indep_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['val']->key => $_smarty_tpl->tpl_vars['val']->value) {
+$_smarty_tpl->tpl_vars['val']->_loop = true;
+?>
+				<span class="list-indep"><b>*</b><?php echo $_smarty_tpl->tpl_vars['val']->value;?>
+<br></span>
+				<?php } ?>
+				<h3>Число независимости - <?php echo $_smarty_tpl->tpl_vars['count']->value;?>
+</h3>
 			</div>
 		</div>
 	</body>

@@ -1,6 +1,8 @@
 <?php
 	class Independent {
 		
+		public $max_el;
+		
 		function independentM($map, $razmer){
 			$indep = array();			
 			
@@ -48,8 +50,43 @@
 					$ind_res[] = $val;
 				}				
 			}
-			print_r($ind_res);
+			
+			// Posik max nezav-e Mn-vo vershin
+			$ind_show = array();
+			$ind_show = array_fill(0, count($ind_res), NULL);
+			$el = 0;
+			$max_count = 0;
+			$max_el = 0;
+			
+			foreach($ind_res as $val){
+				$ind_show[$el] = $ind_show[$el]."{";
+				$tek_count = 0;				
+				foreach($val as $item){
+					$ind_show[$el] = $ind_show[$el].",".($item+1);
+					$tek_count++; 	
+				}
+				if($tek_count >= $max_count){
+					$max_count = $tek_count; 
+					$max_el = $el;
+				}
+				$ind_show[$el] = $ind_show[$el]."};";
+				$el++; 
+			}
+			$ind_show = array_unique($ind_show);
+			$ind_show[$max_el] = $ind_show[$max_el]."-MAX";
+			$this->max_el = $max_el;
+			
+			// END Posik max nezav-e Mn-vo vershin
+			return $ind_show;
 		}
+
+		function chislo_nezav($array, $max){
+			$count = 0;
+			$res = explode(",", $array[$max]);
+			$count = count($res) - 1;
+			return $count;
+		}
+				
 		
 		function dopSmezhnost($smezh, $map, $search){
 			foreach($map as $val){
