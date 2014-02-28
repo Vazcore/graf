@@ -55,3 +55,15 @@ form input{
 .menu ul li a{
 	color: white;	
 }
+
+.result-column{
+	float: left;
+	width: 40%;
+	padding: 10px;
+	margin-right: 10px;	
+	border: 1px solid silver;
+}
+
+.hideBlock{
+	display: none;
+}
