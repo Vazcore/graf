@@ -322,7 +322,7 @@
 					}
 				}
 			}
-			// Sorturuem po ubyvaniyu dlya sravneniya
+			// Sortiruem po ubyvaniyu dlya sravneniya
 			rsort($gr1_smezh);
 			rsort($gr2_smezh);
 			

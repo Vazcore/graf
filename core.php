@@ -5,6 +5,7 @@
 	require_once "classes/Graf.php";
 	require_once "classes/Independent.php";
 	require_once "classes/Klika.php";
+	require_once "classes/Dominant.php";
 	
 	
 	$smarty = new Smarty();
@@ -13,6 +14,7 @@
 	$graf = new Graf();
 	$independent = new Independent();
 	$klika = new Klika();
+	$dom = new Dominant();
 	
 	if(isset($_GET['fio'])){
 		
@@ -80,6 +82,18 @@
 					$result[count($result)-1] = "<div class='hideBlock'>".$result[count($result)-1]."</div>"; 
 					$smarty->assign("smezhnye_list", $result);
 					$smarty->display("klika.tpl");
+					break;
+					
+				case 5:					
+					$razmer = $graf->razmer;
+					$matrix = $core->martixY($fio_vector);
+					$matrixA = $core->martixA($matrix, "another");
+					$result = $dom->action($matrixA, $razmer);
+					$min = $result[count($result)-1];
+					
+					$smarty->assign("dom", $result);
+					$smarty->assign("min", $min);
+					$smarty->display("dominant.tpl");
 					break;
 				default:
 					
